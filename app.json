@@ -2,6 +2,7 @@
   "expo": {
     "name": "Target",
     "slug": "target",
+    "scheme": "target",
     "icon": "./assets/icon.png",
     "ios": {
       "icon": "./assets/ios-icon.png"
