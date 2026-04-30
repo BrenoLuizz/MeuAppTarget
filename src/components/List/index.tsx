@@ -1,34 +1,39 @@
 import { FlatList, FlatListProps, Text, View, ViewStyle } from 'react-native'
-import { colors } from '@/theme/colors'
-import { fontFamily } from '@/theme/fontFamily'
+
+import { styles } from './styles'
 
 type Props<T> = FlatListProps<T> & {
   title: string
-  emptyMessage: string
+  emptyMessage?: string
   containerStyle?: ViewStyle
 }
 
-export function List<T>({ title, emptyMessage, containerStyle, data, ...rest }: Props<T>) {
-  const isEmpty = !data || data.length === 0
-
+export function List<T>({
+  title,
+  emptyMessage,
+  containerStyle,
+  data,
+  renderItem,
+  ...rest
+}: Props<T>) {
   return (
-    <View style={[{ width: '100%' }, containerStyle]}>
-      <Text style={{ fontFamily: fontFamily.bold, fontSize: 18, marginBottom: 12, color: colors.black }}>
-        {title}
-      </Text>
+    <View style={[styles.container, containerStyle]}>
+      <Text style={styles.title}>{title}</Text>
 
-      {isEmpty ? (
-        <Text style={{ color: colors.gray[500], fontFamily: fontFamily.regular }}>
-          {emptyMessage}
-        </Text>
-      ) : (
-        <FlatList
-          data={data}
-          keyExtractor={(_, index) => String(index)}
-          ItemSeparatorComponent={() => <View style={{ height: 12 }} />}
-          {...rest}
-        />
-      )}
+      <FlatList
+        data={data}
+        renderItem={renderItem}
+        keyExtractor={(item: any) => item.id}
+        contentContainerStyle={styles.listContent}
+        ItemSeparatorComponent={() => <View style={styles.separator} />}
+        ListEmptyComponent={
+          emptyMessage ? (
+            <Text style={styles.empty}>{emptyMessage}</Text>
+          ) : null
+        }
+        showsVerticalScrollIndicator={false}
+        {...rest}
+      />
     </View>
   )
 }

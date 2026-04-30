@@ -11,8 +11,20 @@ const summary = {
 }
 
 const targets = [
-  { id: '1', name: 'Viagem', current: 'R$ 580,00', target: 'R$ 1.780,00', percentage: 25 },
-  { id: '2', name: 'Notebook', current: 'R$ 1.200,00', target: 'R$ 4.000,00', percentage: 30 },
+  {
+    id: '1',
+    name: 'Viagem',
+    current: 'R$ 580,00',
+    target: 'R$ 1.780,00',
+    percentage: 25,
+  },
+  {
+    id: '2',
+    name: 'Notebook',
+    current: 'R$ 1.200,00',
+    target: 'R$ 4.000,00',
+    percentage: 30,
+  },
 ]
 
 export default function Index() {
@@ -27,7 +39,18 @@ export default function Index() {
           renderItem={({ item }) => (
             <Button
               title={`${item.name} • ${item.percentage}%`}
-              onPress={() => router.navigate(`/in-progress/${item.id}`)}
+              onPress={() =>
+                router.push({
+                  pathname: '/in-progress/[id]',
+                  params: {
+                    id: item.id,
+                    name: item.name,
+                    percentage: item.percentage.toString(),
+                    current: item.current,
+                    target: item.target,
+                  },
+                })
+              }
             />
           )}
           emptyMessage="Nenhuma meta. Toque em nova meta para criar."
@@ -35,7 +58,10 @@ export default function Index() {
         />
 
         <View style={{ padding: 24, paddingBottom: 32 }}>
-          <Button title="Nova meta" onPress={() => router.navigate('/target')} />
+          <Button
+            title="Nova meta"
+            onPress={() => router.push('/target')}
+          />
         </View>
       </View>
     </View>

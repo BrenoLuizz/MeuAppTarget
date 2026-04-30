@@ -5,9 +5,11 @@
     "scheme": "target",
     "icon": "./assets/icon.png",
     "ios": {
-      "icon": "./assets/ios-icon.png"
+      "icon": "./assets/ios-icon.png",
+      "bundleIdentifier": "com.arthurrios.target"
     },
     "android": {
+      "package": "com.arthurrios.target",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
