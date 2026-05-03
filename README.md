@@ -1,50 +1,35 @@
-# Welcome to your Expo app 👋
+📱 Target - App de Metas Financeiras
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+O Target é um aplicativo mobile desenvolvido com React Native + Expo, que permite ao usuário criar, acompanhar e gerenciar metas financeiras de forma simples e intuitiva.
 
-## Get started
+O objetivo do app é ajudar no controle financeiro pessoal, mostrando quanto já foi economizado, quanto falta para atingir uma meta e permitindo registrar transações de entrada (guardar) e saída (resgatar).
 
-1. Install dependencies
+🚀 Funcionalidades
 
-   ```bash
-   npm install
-   ```
+✅ Criar metas financeiras (ex: viagem, compra de produto)
 
-2. Start the app
+📊 Acompanhar o progresso da meta em porcentagem
 
-   ```bash
-   npx expo start
-   ```
+💰 Registrar transações: Guardar dinheiro (entrada) e Resgatar dinheiro (saída)
 
-In the output, you'll find options to open the app in a
+📋 Listar todas as metas criadas
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+🔎 Visualizar detalhes de cada meta
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+🔁 Navegação com rotas dinâmicas (Expo Router)
 
-## Get a fresh project
+🛠️ Tecnologias utilizadas
 
-When you're ready, run:
+⚛️ React Native
 
-```bash
-npm run reset-project
-```
+🚀 Expo
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+🧭 Expo Router (navegação baseada em arquivos)
 
-## Learn more
+🔤 TypeScript
 
-To learn more about developing your project with Expo, look at the following resources:
+🎨 Expo Linear Gradient
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+💵 react-native-currency-input
 
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+🔡 @expo-google-fonts/inter
